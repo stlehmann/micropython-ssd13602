@@ -84,6 +84,10 @@ class SSD1306(framebuf.FrameBuffer):
 
     def invert(self, invert):
         self.write_cmd(SET_NORM_INV | (invert & 1))
+    
+    def rotate(self, rotate):
+        self.write_cmd(SET_COM_OUT_DIR | ((rotate & 1) << 3))
+        self.write_cmd(SET_SEG_REMAP | (rotate & 1))
 
     def show(self):
         x0 = 0
