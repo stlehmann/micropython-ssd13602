@@ -1,7 +1,15 @@
 # MicroPython SSD1306 OLED driver, I2C and SPI interfaces
 
 from micropython import const
-import framebuf
+# import extended framebuffer if available)
+# https://github.com/peter-l5/framebuf2
+try:
+    import framebuf2 as framebuf
+    _fb_variant = 2
+except:
+    import framebuf
+    _fb_variant = 1
+print("framebuf is ", ("standard" if _fb_variant == 1 else "extended"))
 
 
 # register definitions
