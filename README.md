@@ -13,6 +13,12 @@ If your board or your computer doesn't have an active internet connection you
 can also clone this project on your local drive and copy the *ssd1306.py* to
 your board.
 
+## Type Stubs for IDE Support
+This library now includes `.pyi` type stubs for better IDE integration. To enable autocomplete and type checking in VS Code or other editors:
+- Ensure the `.pyi` files are in your project directory or accessible in your Python path.
+- If needed, add the directory to your IDE's settings (e.g., `python.analysis.extraPaths` in VS Code).
+- If you are using a virtual environment, ensure the stubs are installed in the virtual environment.
+
 ## Example Usage
 This shows an example usage on an *ESP32* board with an *SSD1306* display
 with an resolution of 128x32 pixels. The display is connected via I2C. On the
